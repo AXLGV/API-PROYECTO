@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="APP_TO_DO.MOBILE.MainPage">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="15">
+
+            <Label Text="Mis Recordatorios"
+                   FontSize="28"
+                   FontAttributes="Bold"
+                   HorizontalOptions="Center" />
+
+            <!-- Formulario para crear un nuevo recordatorio -->
+            <Frame Padding="15" BorderColor="LightGray" CornerRadius="10">
+                <VerticalStackLayout Spacing="10">
+                    <Label Text="Nuevo recordatorio" FontAttributes="Bold" />
+
+                    <Entry x:Name="EntryTitulo" Placeholder="Título" />
+                    <Entry x:Name="EntryDescripcion" Placeholder="Descripción" />
+
+                    <Button Text="Guardar recordatorio"
+                            Clicked="OnGuardarClicked"
+                            BackgroundColor="#512BD4"
+                            TextColor="White" />
+                </VerticalStackLayout>
+            </Frame>
+
+            <!-- Botón para refrescar la lista -->
+            <Button Text="Actualizar lista"
+                    Clicked="OnActualizarClicked" />
+
+            <!-- Indicador de carga -->
+            <ActivityIndicator x:Name="LoadingIndicator"
+                                IsRunning="False"
+                                IsVisible="False" />
+
+            <!-- Lista de recordatorios -->
+            <CollectionView x:Name="ListaRecordatorios">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Frame Margin="0,5" Padding="15" BorderColor="LightGray" CornerRadius="8">
+                            <VerticalStackLayout Spacing="5">
+                                <Label Text="{Binding Titulo}" FontAttributes="Bold" FontSize="16" />
+                                <Label Text="{Binding Descripcion}" FontSize="14" TextColor="Gray" />
+                                <Label Text="{Binding Fecha, StringFormat='{0:dd/MM/yyyy HH:mm}'}" FontSize="12" TextColor="DarkGray" />
+                            </VerticalStackLayout>
+                        </Frame>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>

@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="APP_TO_DO.MOBILE/APP_TO_DO.MOBILE.csproj" />
+  <Project Path="MiProyecto.Api.csproj" />
+</Solution>

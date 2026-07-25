@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+	<PropertyGroup>
+		<TargetFramework>net10.0</TargetFramework>
+		<Nullable>enable</Nullable>
+		<ImplicitUsings>enable</ImplicitUsings>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="10.0.9" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Compile Remove="APP_TO_DO.MOBILE\**" />
+		<Content Remove="APP_TO_DO.MOBILE\**" />
+		<EmbeddedResource Remove="APP_TO_DO.MOBILE\**" />
+		<None Remove="APP_TO_DO.MOBILE\**" />
+	</ItemGroup>
+
+</Project>
